@@ -62,8 +62,12 @@
     </script>
   </head>
   <body>
-    <div id="root" class="min-h-screen bg-ws-black flex items-center justify-center text-ws-gold font-western text-xl animate-pulse">
-      Loading Western Sunset...
+    <!-- Fixed: Removed classes from root to prevent persistent animation -->
+    <div id="root">
+      <!-- Loading state is now a child, which React will remove upon mounting -->
+      <div class="min-h-screen bg-ws-black flex items-center justify-center text-ws-gold font-western text-xl animate-pulse">
+        Loading Western Sunset...
+      </div>
     </div>
     <!-- CRITICAL: Entry point for the React Application -->
     <script type="module" src="./index.tsx"></script>
