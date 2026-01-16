@@ -8,11 +8,24 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Rye&family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    
     <script>
-      // Fix for React checking process.env.NODE_ENV
-      window.process = {
-        env: {
-          NODE_ENV: 'production'
+      // 1. Global Polyfills for React compatibility
+      window.process = { env: { NODE_ENV: 'production' } };
+      window.global = window;
+
+      // 2. Global Error Handler to replace "Black Screen" with visible error
+      window.onerror = function(message, source, lineno, colno, error) {
+        const root = document.getElementById('root');
+        if (root) {
+          root.innerHTML = `
+            <div style="color: #ff5555; background: #220000; padding: 20px; font-family: monospace; height: 100vh;">
+              <h2 style="font-size: 20px; font-weight: bold; margin-bottom: 10px;">Application Error</h2>
+              <p><strong>Message:</strong> ${message}</p>
+              <p><strong>Source:</strong> ${source}:${lineno}</p>
+              <pre style="background: rgba(0,0,0,0.5); padding: 10px; margin-top: 10px; white-space: pre-wrap;">${error ? error.stack : ''}</pre>
+            </div>
+          `;
         }
       };
 
@@ -45,35 +58,30 @@
         font-family: 'Noto Sans KR', sans-serif;
         color: #e5e5e5;
       }
-      /* Modern sleek scrollbar */
-      ::-webkit-scrollbar {
-        width: 8px;
-      }
-      ::-webkit-scrollbar-track {
-        background: #1a1a1a; 
-      }
-      ::-webkit-scrollbar-thumb {
-        background: #333; 
-        border-radius: 4px;
-      }
-      ::-webkit-scrollbar-thumb:hover {
-        background: #c5a059; 
-      }
+      ::-webkit-scrollbar { width: 8px; }
+      ::-webkit-scrollbar-track { background: #1a1a1a; }
+      ::-webkit-scrollbar-thumb { background: #333; border-radius: 4px; }
+      ::-webkit-scrollbar-thumb:hover { background: #c5a059; }
     </style>
-  <script type="importmap">
-{
-  "imports": {
-    "react": "https://esm.sh/react@18.2.0",
-    "react/": "https://esm.sh/react@18.2.0/",
-    "react-dom": "https://esm.sh/react-dom@18.2.0",
-    "react-dom/": "https://esm.sh/react-dom@18.2.0/",
-    "react-dom/client": "https://esm.sh/react-dom@18.2.0/client",
-    "lucide-react": "https://esm.sh/lucide-react@0.344.0"
-  }
-}
-</script>
-</head>
+    
+    <!-- Robust Import Map with dependency pinning -->
+    <script type="importmap">
+    {
+      "imports": {
+        "react": "https://esm.sh/react@18.3.1",
+        "react/": "https://esm.sh/react@18.3.1/",
+        "react-dom": "https://esm.sh/react-dom@18.3.1?deps=react@18.3.1",
+        "react-dom/": "https://esm.sh/react-dom@18.3.1/?deps=react@18.3.1",
+        "react-dom/client": "https://esm.sh/react-dom@18.3.1/client?deps=react@18.3.1",
+        "lucide-react": "https://esm.sh/lucide-react@0.344.0?deps=react@18.3.1"
+      }
+    }
+    </script>
+  </head>
   <body>
-    <div id="root"></div>
+    <!-- Initial loading state so screen isn't just black -->
+    <div id="root" class="min-h-screen bg-ws-black flex items-center justify-center text-ws-gold font-western text-xl animate-pulse">
+      Loading Western Sunset...
+    </div>
   </body>
 </html>
