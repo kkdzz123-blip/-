@@ -1,0 +1,57 @@
+import React from 'react';
+import { Character } from '../types';
+import { Skull, Shield, Star, Crosshair } from 'lucide-react';
+
+interface CharacterCardProps {
+  character: Character;
+  onClick: (char: Character) => void;
+  colorTheme: string;
+}
+
+const CharacterCard: React.FC<CharacterCardProps> = ({ character, onClick, colorTheme }) => {
+  
+  // Alignment Icon Helper
+  const getAlignmentIcon = (align: string) => {
+    if (align.includes('악')) return <Skull className="w-3 h-3 text-red-500" />;
+    if (align.includes('선')) return <Shield className="w-3 h-3 text-blue-500" />;
+    return <Star className="w-3 h-3 text-yellow-500" />;
+  };
+
+  return (
+    <div 
+      onClick={() => onClick(character)}
+      className="group bg-ws-panel rounded cursor-pointer border border-white/5 hover:border-ws-gold/50 transition-all duration-300 hover:bg-ws-dark relative overflow-hidden flex flex-col h-full shadow-lg"
+    >
+      {/* Image Area */}
+      <div className="w-full aspect-[4/5] bg-black relative overflow-hidden">
+        <img 
+          src={character.image} 
+          alt={character.name} 
+          className="w-full h-full object-cover object-top opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500"
+        />
+        <div className="absolute top-2 left-2 bg-black/80 p-1.5 rounded backdrop-blur-md border border-white/10 z-10">
+          {getAlignmentIcon(character.alignment)}
+        </div>
+      </div>
+
+      {/* Simple Info Area */}
+      <div className="p-4 flex flex-col flex-1">
+        <h4 className="text-lg font-bold text-white font-sans uppercase tracking-wide group-hover:text-ws-gold transition-colors truncate">
+          {character.name}
+        </h4>
+        <p className="text-xs text-stone-500 font-mono mb-2 uppercase truncate">{character.nickname}</p>
+        
+        <div className="mt-auto pt-3 border-t border-white/5 flex items-center justify-between text-xs text-stone-400">
+           <div className="flex items-center gap-1 truncate">
+             <Crosshair className="w-3 h-3 flex-shrink-0"/> <span className="truncate">{character.job}</span>
+           </div>
+        </div>
+      </div>
+      
+      {/* Hover Effect Line */}
+      <div className="absolute bottom-0 left-0 h-1 w-0 bg-ws-gold group-hover:w-full transition-all duration-300"></div>
+    </div>
+  );
+};
+
+export default CharacterCard;

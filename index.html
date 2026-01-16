@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Western Sunset</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rye&family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              western: ['"Rye"', 'serif'],
+              sans: ['"Noto Sans KR"', 'sans-serif'],
+            },
+            colors: {
+              'ws-black': '#0f0f0f',
+              'ws-dark': '#1a1a1a',
+              'ws-panel': '#262626',
+              'ws-gold': '#c5a059',
+              'ws-red': '#8a3324',
+              'ws-gray': '#888888',
+              'ws-white': '#e5e5e5',
+            },
+            backgroundImage: {
+              'grunge-texture': "linear-gradient(rgba(15,15,15,0.9), rgba(15,15,15,0.9)), url('https://www.transparenttextures.com/patterns/black-linen.png')",
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      body {
+        background-color: #0f0f0f;
+        font-family: 'Noto Sans KR', sans-serif;
+        color: #e5e5e5;
+      }
+      /* Modern sleek scrollbar */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #1a1a1a; 
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #333; 
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #c5a059; 
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "lucide-react": "https://esm.sh/lucide-react@^0.562.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
