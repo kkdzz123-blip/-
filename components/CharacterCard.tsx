@@ -21,12 +21,15 @@ const CharacterCard: React.FC<CharacterCardProps> = ({ character, onClick, color
     <div 
       onClick={() => onClick(character)}
       className="group bg-ws-panel rounded cursor-pointer border border-white/5 hover:border-ws-gold/50 transition-all duration-300 hover:bg-ws-dark relative overflow-hidden flex flex-col h-full shadow-lg"
+      role="button"
+      aria-label={`View details for ${character.name}`}
     >
       {/* Image Area */}
       <div className="w-full aspect-[4/5] bg-black relative overflow-hidden">
         <img 
           src={character.image} 
           alt={character.name} 
+          loading="lazy"
           className="w-full h-full object-cover object-top opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500"
         />
         <div className="absolute top-2 left-2 bg-black/80 p-1.5 rounded backdrop-blur-md border border-white/10 z-10">

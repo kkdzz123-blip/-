@@ -17,6 +17,7 @@ const CharacterModal: React.FC<CharacterModalProps> = ({ character, onClose, acc
       <div 
         className="absolute inset-0 bg-black/90 backdrop-blur-sm transition-opacity" 
         onClick={onClose}
+        aria-hidden="true"
       ></div>
 
       {/* Modal Content - Full screen on mobile, Centered card on desktop */}
@@ -25,6 +26,7 @@ const CharacterModal: React.FC<CharacterModalProps> = ({ character, onClose, acc
         {/* Close Button - Always visible, fixed position for mobile access */}
         <button 
           onClick={onClose}
+          aria-label="Close character details"
           className="absolute top-4 right-4 z-50 p-2 bg-black/60 hover:bg-red-900/80 rounded-full text-white transition-colors border border-white/20 backdrop-blur-md shadow-lg"
         >
           <X className="w-6 h-6" />
@@ -43,6 +45,7 @@ const CharacterModal: React.FC<CharacterModalProps> = ({ character, onClose, acc
           <img 
             src={displayImage} 
             alt={character.name} 
+            loading="eager"
             className="relative w-full h-full object-contain z-10 drop-shadow-2xl"
           />
 

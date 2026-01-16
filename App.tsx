@@ -85,6 +85,7 @@ const App: React.FC = () => {
             <div className={`container mx-auto px-4 py-8 relative z-10 ${isMap ? 'max-w-full' : 'max-w-7xl'}`}>
               <button 
                 onClick={handleBack}
+                aria-label="Back to faction list"
                 className="group mb-8 flex items-center gap-3 text-stone-400 hover:text-white transition-colors"
               >
                 <div className="p-2 rounded-full border border-white/10 group-hover:border-ws-gold bg-black">
@@ -100,6 +101,7 @@ const App: React.FC = () => {
                     <img 
                       src={selectedFaction.logo} 
                       alt={selectedFaction.name} 
+                      loading="eager"
                       className={`${isMap ? 'h-auto max-h-[70vh] w-auto max-w-[90vw] rounded shadow-2xl border border-white/10' : 'h-64 md:h-96 w-auto object-contain'} drop-shadow-[0_0_50px_rgba(255,255,255,0.15)] animate-scale-in`}
                     />
                  </div>

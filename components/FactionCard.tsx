@@ -13,6 +13,8 @@ const FactionCard: React.FC<FactionCardProps> = ({ faction, onClick }) => {
     <div 
       onClick={() => onClick(faction)}
       className="group relative h-[320px] w-full cursor-pointer overflow-hidden rounded-lg bg-ws-dark shadow-xl border border-white/5 hover:border-ws-gold/50 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-black"
+      role="button"
+      aria-label={`View details for ${faction.name}`}
     >
       {/* Background Image/Logo - Dual Layer Strategy */}
       {/* Layer 1: Blurred background fill to cover the box */}
@@ -26,6 +28,7 @@ const FactionCard: React.FC<FactionCardProps> = ({ faction, onClick }) => {
          <img 
           src={faction.logo} 
           alt={faction.name} 
+          loading="lazy"
           className="w-full h-full object-contain drop-shadow-2xl transition-transform duration-500 group-hover:scale-105"
         />
       </div>
