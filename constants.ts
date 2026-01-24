@@ -21,6 +21,10 @@ export const OTHER_LOCATIONS = {
   west: ["데드리지", "라스트포스트", "카인즈그릭"]
 };
 
+// Helper to generate gallery URLs
+const getGallery = (group: 'A' | 'B', charCode: string, count: number) => 
+  Array.from({ length: count }, (_, i) => `https://itimg.kr/1987/WS/${group}/${charCode}/${i + 1}.png`);
+
 export const FACTIONS: Faction[] = [
   {
     id: "cuc",
@@ -42,7 +46,8 @@ export const FACTIONS: Faction[] = [
         backstory: "백인. 남편 허셸 프레스턴 의문사 후 대표가 됨.", 
         image: "https://itimg.kr/1987/11/aa/마틸다.png",
         largeImage: "https://itimg.kr/1987/11/aa/마틸다확대.png",
-        height: "167cm", weight: "59kg", cupSize: "E컵"
+        height: "167cm", weight: "59kg", cupSize: "E컵",
+        gallery: getGallery('A', 'F', 31)
       },
       {
         id: "agatha", name: "아가사 베넷", gender: "여", alignment: "중립", nickname: "-", age: "27",
@@ -51,7 +56,8 @@ export const FACTIONS: Faction[] = [
         backstory: "백인. 형부가 죽은 후 C.U.C에 들어옴.", 
         image: "https://itimg.kr/1987/11/aa/아가사.png",
         largeImage: "https://itimg.kr/1987/11/aa/아가사확대.png",
-        height: "162cm", weight: "51kg", cupSize: "D컵"
+        height: "162cm", weight: "51kg", cupSize: "D컵",
+        gallery: getGallery('A', 'G', 31)
       }
     ]
   },
@@ -76,7 +82,8 @@ export const FACTIONS: Faction[] = [
         backstory: "동양계.", 
         image: "https://itimg.kr/1987/11/aa/왈도.png",
         largeImage: "https://itimg.kr/1987/11/aa/왈도확대.png",
-        height: "187cm", weight: "78kg"
+        height: "187cm", weight: "78kg",
+        gallery: getGallery('B', 'B', 31)
       },
       {
         id: "ida", name: "아이다 도노반", gender: "여", alignment: "중립", nickname: "괴짜", age: "26",
@@ -85,7 +92,8 @@ export const FACTIONS: Faction[] = [
         backstory: "백인.", 
         image: "https://itimg.kr/1987/11/aa/아이다.png",
         largeImage: "https://itimg.kr/1987/11/aa/아이다확대.png",
-        height: "164cm", weight: "47kg", cupSize: "B컵"
+        height: "164cm", weight: "47kg", cupSize: "B컵",
+        gallery: getGallery('A', 'H', 31)
       }
     ]
   },
@@ -110,7 +118,8 @@ export const FACTIONS: Faction[] = [
         backstory: "라틴계. 무법지대 구원을 위해 자경단으로 시작했으나 갱이라는 오명을 얻음.", 
         image: "https://itimg.kr/1987/11/aa/루퍼스.png",
         largeImage: "https://itimg.kr/1987/11/aa/루퍼스확대.png",
-        height: "185cm", weight: "88kg"
+        height: "185cm", weight: "88kg",
+        gallery: getGallery('B', 'D', 11)
       },
       {
         id: "carmela", name: "카멜라 루치아", gender: "여", alignment: "중립", nickname: "해결사", age: "28",
@@ -119,7 +128,8 @@ export const FACTIONS: Faction[] = [
         backstory: "이탈리아계.", 
         image: "https://itimg.kr/1987/11/aa/카멜라.png",
         largeImage: "https://itimg.kr/1987/11/aa/카멜라확대.png",
-        height: "170cm", weight: "48kg", cupSize: "B컵"
+        height: "170cm", weight: "48kg", cupSize: "B컵",
+        gallery: getGallery('A', 'K', 31)
       },
       {
         id: "sting", name: "스팅", gender: "여", alignment: "선", nickname: "스팅", age: "25",
@@ -128,7 +138,8 @@ export const FACTIONS: Faction[] = [
         backstory: "흑인. 서커스단 노예 출신.", 
         image: "https://itimg.kr/1987/11/aa/스팅.png",
         largeImage: "https://itimg.kr/1987/11/aa/스팅확대.png",
-        height: "174cm", weight: "57kg", cupSize: "C컵"
+        height: "174cm", weight: "57kg", cupSize: "C컵",
+        gallery: getGallery('A', 'J', 31)
       }
     ]
   },
@@ -153,7 +164,8 @@ export const FACTIONS: Faction[] = [
         backstory: "라틴계. 길을 직접 닦은 아버지에게 물려받은 2대 사장.", 
         image: "https://itimg.kr/1987/11/aa/토마스.png",
         largeImage: "https://itimg.kr/1987/11/aa/토마스확대.png",
-        height: "186cm", weight: "82kg"
+        height: "186cm", weight: "82kg",
+        gallery: getGallery('B', 'C', 11)
       },
       {
         id: "sophia", name: "소피아 킴", gender: "여", alignment: "선", nickname: "레이븐", age: "28",
@@ -162,7 +174,8 @@ export const FACTIONS: Faction[] = [
         backstory: "동양계. 조선의 노비 출신으로 선교사에게 거둬짐.", 
         image: "https://itimg.kr/1987/11/aa/소피아.png",
         largeImage: "https://itimg.kr/1987/11/aa/소피아확대.png",
-        height: "158cm", weight: "42kg", cupSize: "A컵"
+        height: "158cm", weight: "42kg", cupSize: "A컵",
+        gallery: getGallery('A', 'I', 31)
       },
       {
         id: "martha", name: "마사", gender: "여", alignment: "중립", nickname: "블랙 쿠거", age: "30",
@@ -171,7 +184,8 @@ export const FACTIONS: Faction[] = [
         backstory: "흑인. 해방된 노예 출신.", 
         image: "https://itimg.kr/1987/WS/T/마사.png",
         largeImage: "https://itimg.kr/1987/WS/T/마사1.png",
-        height: "168cm", weight: "65kg", cupSize: "F컵"
+        height: "168cm", weight: "65kg", cupSize: "F컵",
+        gallery: getGallery('A', 'L', 31)
       }
     ]
   },
@@ -195,7 +209,8 @@ export const FACTIONS: Faction[] = [
         backstory: "인디언. 부족민들의 거처 마련을 위해 돈을 모으는 중.", 
         image: "https://itimg.kr/1987/11/aa/밤눈매.png",
         largeImage: "https://itimg.kr/1987/11/aa/밤눈매확대.png",
-        height: "162cm", weight: "48kg", cupSize: "B컵", specialStatus: "처녀"
+        height: "162cm", weight: "48kg", cupSize: "B컵", specialStatus: "처녀",
+        gallery: getGallery('A', 'E', 31)
       }
     ]
   },
@@ -219,7 +234,8 @@ export const FACTIONS: Faction[] = [
         backstory: "백인. 알비니즘으로 인해 불길하다며 마을에서 쫓겨남. 오직 돈만 믿음.", 
         image: "https://itimg.kr/1987/11/aa/크리스.png",
         largeImage: "https://itimg.kr/1987/11/aa/크리스확대.png",
-        height: "177cm", weight: "64kg"
+        height: "177cm", weight: "64kg",
+        gallery: getGallery('B', 'E', 11)
       }
     ]
   },
@@ -244,7 +260,8 @@ export const FACTIONS: Faction[] = [
         backstory: "라틴계. 사람을 도축하고 장식하는 미치광이.", 
         image: "https://itimg.kr/1987/11/aa/그록.png",
         largeImage: "https://itimg.kr/1987/11/aa/그록확대.png",
-        height: "195cm", weight: "110kg"
+        height: "195cm", weight: "110kg",
+        gallery: getGallery('B', 'F', 11)
       }
     ]
   },
@@ -268,7 +285,8 @@ export const FACTIONS: Faction[] = [
         backstory: "백인. CUC의 부당 계약으로 파산 후 복수 준비 중.", 
         image: "https://itimg.kr/1987/11/aa/머피.png",
         largeImage: "https://itimg.kr/1987/11/aa/머피확대.png",
-        height: "180cm", weight: "65kg"
+        height: "180cm", weight: "65kg",
+        gallery: getGallery('B', 'A', 11)
       },
       {
         id: "rose", name: "로즈 설리번", gender: "여", alignment: "악", nickname: "독 장미", age: "27",
@@ -277,7 +295,8 @@ export const FACTIONS: Faction[] = [
         backstory: "백인. 동부에서 창녀로 일하다 포주를 죽이고 서부로 도주.", 
         image: "https://itimg.kr/1987/11/aa/로즈.png",
         largeImage: "https://itimg.kr/1987/11/aa/로즈확대.png",
-        height: "167cm", weight: "55kg", cupSize: "D컵"
+        height: "167cm", weight: "55kg", cupSize: "D컵",
+        gallery: getGallery('A', 'C', 31)
       },
       {
         id: "emily", name: "에밀리 록시", gender: "여", alignment: "선", nickname: "록시 중사", age: "25",
@@ -286,7 +305,8 @@ export const FACTIONS: Faction[] = [
         backstory: "동양계. 남북전쟁 시 신념을 위해 남장 후 참전, 민간인 사살 임무 거부하고 탈영.", 
         image: "https://itimg.kr/1987/11/aa/에밀리.png",
         largeImage: "https://itimg.kr/1987/11/aa/에밀리확대.png",
-        height: "165cm", weight: "49kg", cupSize: "A컵"
+        height: "165cm", weight: "49kg", cupSize: "A컵",
+        gallery: getGallery('A', 'A', 31)
       },
       {
         id: "joy", name: "조이 번즈", gender: "여", alignment: "선", nickname: "스마일 번즈", age: "22",
@@ -295,7 +315,8 @@ export const FACTIONS: Faction[] = [
         backstory: "아이리쉬계. 아버지를 잃고 기술을 배움.", 
         image: "https://itimg.kr/1987/11/aa/조이.png",
         largeImage: "https://itimg.kr/1987/11/aa/조이확대.png",
-        height: "155cm", weight: "42kg", cupSize: "A컵", specialStatus: "처녀"
+        height: "155cm", weight: "42kg", cupSize: "A컵", specialStatus: "처녀",
+        gallery: getGallery('A', 'B', 31)
       },
       {
         id: "hazel", name: "헤이즐 킹슬리", gender: "여", alignment: "선", nickname: "철없는 공주님", age: "23",
@@ -304,7 +325,8 @@ export const FACTIONS: Faction[] = [
         backstory: "영국계. 사병 이끌고 무법자 소탕 중 혼자 살아남음. 현실과 이상의 괴리에 고통.", 
         image: "https://itimg.kr/1987/11/aa/헤이즐.png",
         largeImage: "https://itimg.kr/1987/11/aa/헤이즐확대.png",
-        height: "170cm", weight: "57kg", cupSize: "D컵", specialStatus: "처녀"
+        height: "170cm", weight: "57kg", cupSize: "D컵", specialStatus: "처녀",
+        gallery: getGallery('A', 'D', 31)
       }
     ]
   },

@@ -14,6 +14,7 @@ export interface Character {
   backstory: string;
   image?: string; // Character portrait URL (thumbnail)
   largeImage?: string; // Character large portrait URL (modal)
+  gallery?: string[]; // New: Array of image URLs for the gallery
   
   // New Physical Stats
   height: string;
