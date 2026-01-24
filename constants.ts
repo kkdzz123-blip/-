@@ -83,7 +83,7 @@ export const FACTIONS: Faction[] = [
         image: "https://itimg.kr/1987/11/aa/왈도.png",
         largeImage: "https://itimg.kr/1987/11/aa/왈도확대.png",
         height: "187cm", weight: "78kg",
-        gallery: getGallery('B', 'B', 31)
+        gallery: getGallery('B', 'B', 11)
       },
       {
         id: "ida", name: "아이다 도노반", gender: "여", alignment: "중립", nickname: "괴짜", age: "26",
