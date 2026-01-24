@@ -11,11 +11,15 @@ export interface Character {
   strength: string;
   weapon: string;
   speechStyle: string;
-  outfit: string;
-  appearance: string;
   backstory: string;
   image?: string; // Character portrait URL (thumbnail)
   largeImage?: string; // Character large portrait URL (modal)
+  
+  // New Physical Stats
+  height: string;
+  weight: string;
+  cupSize?: string;
+  specialStatus?: string; // e.g. 처녀
 }
 
 export interface Faction {

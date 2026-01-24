@@ -110,11 +110,36 @@ const CharacterModal: React.FC<CharacterModalProps> = ({ character, onClose, acc
               </p>
             </div>
 
-            {/* Appearance */}
-            <div className="bg-black/30 p-4 rounded border border-white/5">
-               <h3 className="text-xs font-bold text-stone-500 uppercase mb-2">Appearance & Outfit</h3>
-               <p className="text-sm text-stone-300 mb-1">{character.appearance}</p>
-               <p className="text-xs text-stone-500">{character.outfit}</p>
+            {/* New Physical Attributes Section */}
+            <div className="bg-black/30 p-5 rounded border border-white/5">
+               <h3 className="text-xs font-bold text-stone-500 uppercase mb-3 flex items-center gap-2">
+                 Physical Attributes
+               </h3>
+               
+               <div className="grid grid-cols-2 gap-4">
+                  <div className="flex justify-between items-center border-b border-white/5 pb-2">
+                    <span className="text-stone-400 text-xs">Height</span>
+                    <span className="text-stone-200 font-mono text-sm">{character.height}</span>
+                  </div>
+                  <div className="flex justify-between items-center border-b border-white/5 pb-2">
+                    <span className="text-stone-400 text-xs">Weight</span>
+                    <span className="text-stone-200 font-mono text-sm">{character.weight}</span>
+                  </div>
+                  
+                  {character.cupSize && (
+                     <div className="flex justify-between items-center border-b border-white/5 pb-2">
+                        <span className="text-stone-400 text-xs">Cup Size</span>
+                        <span className="text-stone-200 font-mono text-sm">{character.cupSize}</span>
+                     </div>
+                  )}
+
+                  {character.specialStatus && (
+                     <div className="flex justify-between items-center border-b border-white/5 pb-2">
+                        <span className="text-stone-400 text-xs">Note</span>
+                        <span className="text-ws-red font-bold text-sm">{character.specialStatus}</span>
+                     </div>
+                  )}
+               </div>
             </div>
           </div>
 
