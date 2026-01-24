@@ -7,7 +7,7 @@ const UniverseIntro: React.FC = () => {
       {/* Background Image - Full Screen Width */}
       <div 
         className="absolute inset-0 bg-cover bg-center transition-transform duration-[20s] group-hover:scale-105"
-        style={{ backgroundImage: "url('https://itimg.kr/1987/11/aa/배경.jpg')" }}
+        style={{ backgroundImage: "url('https://itimg.kr/1987/WS/T/bgr.png')" }}
       ></div>
       
       {/* Gradient Overlay */}
