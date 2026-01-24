@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { FACTIONS } from './constants';
 import { Faction, Character } from './types';
 import UniverseIntro from './components/UniverseIntro';
@@ -11,14 +11,43 @@ const App: React.FC = () => {
   const [selectedFaction, setSelectedFaction] = useState<Faction | null>(null);
   const [selectedCharacter, setSelectedCharacter] = useState<Character | null>(null);
 
+  // Handle Browser Back Button Navigation
+  useEffect(() => {
+    const handlePopState = (event: PopStateEvent) => {
+      // Logic: Close Character Modal -> Close Faction Detail -> Default (Exit)
+      // We check the current state to decide what to close
+      if (selectedCharacter) {
+        setSelectedCharacter(null);
+      } else if (selectedFaction) {
+        setSelectedFaction(null);
+      }
+    };
+
+    window.addEventListener('popstate', handlePopState);
+    return () => window.removeEventListener('popstate', handlePopState);
+  }, [selectedCharacter, selectedFaction]);
+
   const handleFactionClick = (faction: Faction) => {
+    // Push history state so back button works
+    window.history.pushState({ view: 'faction', id: faction.id }, '');
     setSelectedFaction(faction);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  const handleBack = () => {
-    setSelectedFaction(null);
-    setSelectedCharacter(null);
+  const handleCharacterClick = (char: Character) => {
+    // Push history state so back button works
+    window.history.pushState({ view: 'character', id: char.id }, '');
+    setSelectedCharacter(char);
+  };
+
+  const handleBackToMap = () => {
+    // Use history.back() to trigger popstate and keep sync
+    window.history.back();
+  };
+
+  const handleCloseModal = () => {
+    // Use history.back() to trigger popstate and keep sync
+    window.history.back();
   };
 
   const isMap = selectedFaction?.id === 'world-map';
@@ -28,7 +57,7 @@ const App: React.FC = () => {
       
       {/* Navigation */}
       <nav className="w-full py-6 px-8 flex justify-between items-center border-b border-white/5 bg-black/80 backdrop-blur-md sticky top-0 z-40">
-        <div className="text-2xl font-western text-white tracking-widest cursor-pointer hover:text-ws-gold transition-colors" onClick={handleBack}>
+        <div className="text-2xl font-western text-white tracking-widest cursor-pointer hover:text-ws-gold transition-colors" onClick={() => window.location.reload()}>
           WESTERN <span className="text-ws-gold">SUNSET</span>
         </div>
         <div className="text-xs font-mono text-stone-500">
@@ -84,7 +113,7 @@ const App: React.FC = () => {
 
             <div className={`container mx-auto px-4 py-8 relative z-10 ${isMap ? 'max-w-full' : 'max-w-7xl'}`}>
               <button 
-                onClick={handleBack}
+                onClick={handleBackToMap}
                 aria-label="Back to faction list"
                 className="group mb-8 flex items-center gap-3 text-stone-400 hover:text-white transition-colors"
               >
@@ -147,7 +176,7 @@ const App: React.FC = () => {
                       <CharacterCard 
                           key={char.id} 
                           character={char} 
-                          onClick={setSelectedCharacter}
+                          onClick={handleCharacterClick}
                           colorTheme={selectedFaction.style.accentColor}
                       />
                     ))}
@@ -163,7 +192,7 @@ const App: React.FC = () => {
       {selectedCharacter && selectedFaction && (
         <CharacterModal 
           character={selectedCharacter} 
-          onClose={() => setSelectedCharacter(null)}
+          onClose={handleCloseModal}
           accentColor={selectedFaction.style.accentColor}
         />
       )}
