@@ -336,7 +336,7 @@ export const FACTIONS: Faction[] = [
     koreanName: "세계관 지도",
     fullName: "Western Sunset Map",
     slogan: "Explore the Territory",
-    logo: "https://itimg.kr/1987/11/aa/맵.jpg",
+    logo: "https://itimg.kr/1987/WS/T/M.jpg",
     description: [
       "미 서부 개척시대를 배경으로 하지만 지역, 지명, 세력, 인물 등 모두 창작 된 세계관입니다."
     ],
