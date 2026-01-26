@@ -113,7 +113,7 @@ export const FACTIONS: Faction[] = [
     characters: [
       {
         id: "rufus", name: "루퍼스 스프링스틴", gender: "남", alignment: "선", nickname: "대부", age: "42",
-        personality: "밝음+서글서글+유머러스+농담+유쾌함", origin: "군인(상사) 출신", job: "B.A.D 우두머리",
+        personality: "밝음+서글서글+유머러스+농담+유쾌함", origin: "군인(상사) 출신", job: "B.S 보스",
         strength: "사격술+용병술+전술+치밀함", weapon: "모든 총기", speechStyle: "호방함+인자함",
         backstory: "라틴계. 무법지대 구원을 위해 자경단으로 시작했으나 갱이라는 오명을 얻음.", 
         image: "https://itimg.kr/1987/11/aa/루퍼스.png",
