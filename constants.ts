@@ -12,7 +12,7 @@ export const UNIVERSE_INFO = [
 export const LOCATIONS: Location[] = [
   { name: "그린우드", description: ["서부에서 그나마 동쪽에 위치한 마을", "준법적 (동쪽 도시와 가깝기 때문)"] },
   { name: "스톤월 산맥", description: ["서부 중앙을 세로로 가로막고 있는 석산", "유일한 통로는 스톤컷 패스"] },
-  { name: "레드 더스트", description: ["극서부, 멕시코와 거의 맞닿은 지역", "B.S의 본거지 (규율이 있는 마을)"] },
+  { name: "레드 더스트", description: ["극서부, 블랙 스퍼스가 점거중인 마을", "B.S의 본거지 (규율이 있는 마을)"] },
   { name: "아이언 폴", description: ["서부에서 동쪽 끝자락에 자리한 대도시", "철광, 석탄, 석유, 철도산업의 중심지", "C.U.C와 B.A.D의 본거지"] },
 ];
 
@@ -47,7 +47,7 @@ export const FACTIONS: Faction[] = [
         image: "https://itimg.kr/1987/11/aa/마틸다.png",
         largeImage: "https://itimg.kr/1987/11/aa/마틸다확대.png",
         height: "167cm", weight: "59kg", cupSize: "E컵",
-        gallery: getGallery('A', 'F', 31)
+        gallery: getGallery('A', 'F', 32)
       },
       {
         id: "agatha", name: "아가사 베넷", gender: "여", alignment: "중립", nickname: "-", age: "27",
@@ -57,7 +57,7 @@ export const FACTIONS: Faction[] = [
         image: "https://itimg.kr/1987/11/aa/아가사.png",
         largeImage: "https://itimg.kr/1987/11/aa/아가사확대.png",
         height: "162cm", weight: "51kg", cupSize: "D컵",
-        gallery: getGallery('A', 'G', 31)
+        gallery: getGallery('A', 'G', 32)
       }
     ]
   },
@@ -93,7 +93,7 @@ export const FACTIONS: Faction[] = [
         image: "https://itimg.kr/1987/11/aa/아이다.png",
         largeImage: "https://itimg.kr/1987/11/aa/아이다확대.png",
         height: "164cm", weight: "47kg", cupSize: "B컵",
-        gallery: getGallery('A', 'H', 31)
+        gallery: getGallery('A', 'H', 32)
       }
     ]
   },
@@ -129,7 +129,7 @@ export const FACTIONS: Faction[] = [
         image: "https://itimg.kr/1987/11/aa/카멜라.png",
         largeImage: "https://itimg.kr/1987/11/aa/카멜라확대.png",
         height: "170cm", weight: "48kg", cupSize: "B컵",
-        gallery: getGallery('A', 'K', 31)
+        gallery: getGallery('A', 'K', 32)
       },
       {
         id: "sting", name: "스팅", gender: "여", alignment: "선", nickname: "스팅", age: "25",
@@ -139,7 +139,7 @@ export const FACTIONS: Faction[] = [
         image: "https://itimg.kr/1987/11/aa/스팅.png",
         largeImage: "https://itimg.kr/1987/11/aa/스팅확대.png",
         height: "174cm", weight: "57kg", cupSize: "C컵",
-        gallery: getGallery('A', 'J', 31)
+        gallery: getGallery('A', 'J', 32)
       }
     ]
   },
@@ -175,7 +175,7 @@ export const FACTIONS: Faction[] = [
         image: "https://itimg.kr/1987/11/aa/소피아.png",
         largeImage: "https://itimg.kr/1987/11/aa/소피아확대.png",
         height: "158cm", weight: "42kg", cupSize: "A컵",
-        gallery: getGallery('A', 'I', 31)
+        gallery: getGallery('A', 'I', 32)
       },
       {
         id: "martha", name: "마사", gender: "여", alignment: "중립", nickname: "블랙 쿠거", age: "30",
@@ -185,7 +185,7 @@ export const FACTIONS: Faction[] = [
         image: "https://itimg.kr/1987/WS/T/마사.png",
         largeImage: "https://itimg.kr/1987/WS/T/마사1.png",
         height: "168cm", weight: "65kg", cupSize: "F컵",
-        gallery: getGallery('A', 'L', 31)
+        gallery: getGallery('A', 'L', 32)
       }
     ]
   },
@@ -210,7 +210,7 @@ export const FACTIONS: Faction[] = [
         image: "https://itimg.kr/1987/11/aa/밤눈매.png",
         largeImage: "https://itimg.kr/1987/11/aa/밤눈매확대.png",
         height: "162cm", weight: "48kg", cupSize: "B컵", specialStatus: "처녀",
-        gallery: getGallery('A', 'E', 31)
+        gallery: getGallery('A', 'E', 32)
       }
     ]
   },
@@ -296,7 +296,7 @@ export const FACTIONS: Faction[] = [
         image: "https://itimg.kr/1987/11/aa/로즈.png",
         largeImage: "https://itimg.kr/1987/11/aa/로즈확대.png",
         height: "167cm", weight: "55kg", cupSize: "D컵",
-        gallery: getGallery('A', 'C', 31)
+        gallery: getGallery('A', 'C', 32)
       },
       {
         id: "emily", name: "에밀리 록시", gender: "여", alignment: "선", nickname: "록시 중사", age: "25",
@@ -306,7 +306,7 @@ export const FACTIONS: Faction[] = [
         image: "https://itimg.kr/1987/11/aa/에밀리.png",
         largeImage: "https://itimg.kr/1987/11/aa/에밀리확대.png",
         height: "165cm", weight: "49kg", cupSize: "A컵",
-        gallery: getGallery('A', 'A', 31)
+        gallery: getGallery('A', 'A', 32)
       },
       {
         id: "joy", name: "조이 번즈", gender: "여", alignment: "선", nickname: "스마일 번즈", age: "22",
@@ -316,7 +316,7 @@ export const FACTIONS: Faction[] = [
         image: "https://itimg.kr/1987/11/aa/조이.png",
         largeImage: "https://itimg.kr/1987/11/aa/조이확대.png",
         height: "155cm", weight: "42kg", cupSize: "A컵", specialStatus: "처녀",
-        gallery: getGallery('A', 'B', 31)
+        gallery: getGallery('A', 'B', 32)
       },
       {
         id: "hazel", name: "헤이즐 킹슬리", gender: "여", alignment: "선", nickname: "철없는 공주님", age: "23",
@@ -326,7 +326,7 @@ export const FACTIONS: Faction[] = [
         image: "https://itimg.kr/1987/11/aa/헤이즐.png",
         largeImage: "https://itimg.kr/1987/11/aa/헤이즐확대.png",
         height: "170cm", weight: "57kg", cupSize: "D컵", specialStatus: "처녀",
-        gallery: getGallery('A', 'D', 31)
+        gallery: getGallery('A', 'D', 32)
       }
     ]
   },
